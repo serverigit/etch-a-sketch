@@ -7,7 +7,7 @@ grid.setAttribute("class", "grid");
 
 let number;
 
-function canvasInitialiser() {
+function canvasInitialize(number) {
   number = 16;
   grid.style.width = 100 / number + "%";
   grid.style.height = 100 / number + "%";
@@ -16,7 +16,7 @@ function canvasInitialiser() {
   }
 }
 
-canvasInitialiser();
+canvasInitialize();
 
 sizeBtn.addEventListener("click", function (number) {
   number = prompt("Set your size. Number must be between 1-100.");
