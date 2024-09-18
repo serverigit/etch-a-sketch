@@ -1,6 +1,7 @@
 const gridContainer = document.querySelector("#grid-container");
 const sizeBtn = document.querySelector("#size-button");
 const clearBtn = document.querySelector("#clear-button");
+const informationDiv = document.querySelector("#information");
 
 const grid = document.createElement("div");
 grid.setAttribute("class", "grid");
@@ -14,6 +15,7 @@ function canvasInitialize(number) {
   for (let i = 1; i <= number * number; i++) {
     gridContainer.append(grid.cloneNode());
   }
+  informationDiv.textContent = `Current grid is ${number}x${number}.`
 }
 
 canvasInitialize();
@@ -33,6 +35,7 @@ sizeBtn.addEventListener("click", function (number) {
   for (let i = 1; i <= number * number; i++) {
     gridContainer.append(grid.cloneNode());
   }
+  informationDiv.textContent = `Current grid is ${number}x${number}.`
 });
 
 clearBtn.addEventListener("click", () => {
