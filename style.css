@@ -1,0 +1,28 @@
+body {
+    background-color: beige;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid-container {
+    background-color: white;
+    height: 800px;
+    width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid, black;
+    align-self: center;
+    margin: 0 auto;
+}
+
+.grid {
+    box-sizing: border-box;
+    /* width: 4.761904762%;
+    height: 4.761904762%; */
+    /* border: solid, black; */
+    margin: 0;
+}
