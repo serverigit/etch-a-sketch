@@ -27,7 +27,7 @@ function clearGrid() {
 }
 
 sizeBtn.addEventListener("click", function () {
-  number = prompt("Set your size. Number must be between 1-100.");
+  number = parseInt(prompt("Set your size. Number must be between 1-100."));
   if (number > 100 || number <= 0) {
     alert("Invalid number. Number must be between 1-100.");
     return;
