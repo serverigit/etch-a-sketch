@@ -74,13 +74,10 @@ gridContainer.addEventListener("mouseover", (e) => {
       e.target.style.backgroundColor = "white";
     }
     if (rainbow) {
-      e.target.style.backgroundColor = "black";
+      e.target.style.backgroundColor = getRandomColor();
     }
   }
 });
-
-// Add rainbow effect
-  // red, orange, yellow, green, blue, indigo, and violet
 
 function getRandomColor() {
   const rainbowColors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
