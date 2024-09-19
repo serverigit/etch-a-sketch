@@ -6,21 +6,27 @@ const informationDiv = document.querySelector("#information");
 const grid = document.createElement("div");
 grid.setAttribute("class", "grid");
 
-let number;
+let number = 16;
 
-function canvasInitialize(number) {
-  number = 16;
+function generateGrid(number) {
   grid.style.width = 100 / number + "%";
   grid.style.height = 100 / number + "%";
   for (let i = 1; i <= number * number; i++) {
     gridContainer.append(grid.cloneNode());
   }
-  informationDiv.textContent = `Current grid is ${number}x${number}.`
+  informationDiv.textContent = `Current grid is ${number}x${number}.`;
 }
 
-canvasInitialize();
+generateGrid(number);
 
-sizeBtn.addEventListener("click", function (number) {
+function clearGrid() {
+  const gridClone = document.querySelectorAll(".grid");
+  gridClone.forEach((element) => {
+    element.style.backgroundColor = "white";
+  })
+}
+
+sizeBtn.addEventListener("click", function () {
   number = prompt("Set your size. Number must be between 1-100.");
   if (number > 100 || number <= 0) {
     alert("Invalid number. Number must be between 1-100.");
@@ -30,20 +36,10 @@ sizeBtn.addEventListener("click", function (number) {
   gridClone.forEach((element) => {
     element.remove();
   });
-  grid.style.width = 100 / number + "%";
-  grid.style.height = 100 / number + "%";
-  for (let i = 1; i <= number * number; i++) {
-    gridContainer.append(grid.cloneNode());
-  }
-  informationDiv.textContent = `Current grid is ${number}x${number}.`
+  generateGrid(number);
 });
 
-clearBtn.addEventListener("click", () => {
-  const gridClone = document.querySelectorAll(".grid");
-  gridClone.forEach((element) => {
-    element.style.backgroundColor = "white";
-  });
-});
+clearBtn.addEventListener("click", clearGrid);
 
 gridContainer.addEventListener("mouseover", (e) => {
   if (e.target.matches(".grid")) {
